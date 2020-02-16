@@ -1,0 +1,21 @@
+pipeline
+{
+agent any
+stages
+{
+stage('scm checout')
+{
+steps {
+branch: 'master, 'git: "https://github.com/akhare101/maven-project"
+}
+}
+stage ('validate code')
+{
+steps
+{
+withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') {
+   sh 'mvn validate'
+}
+}
+}}
+}
