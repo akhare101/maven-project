@@ -1,0 +1,11 @@
+pipeline
+{
+agent any
+stages
+{
+stage('scm checout')
+{
+steps {
+branch: 'master, 'git: "https://github.com/akhare101/maven-project"
+}
+}
