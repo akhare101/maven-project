@@ -6,7 +6,7 @@ stages
 stage('scm checout')
 {
 steps {
-branch: 'master, git: 'https://github.com/akhare101/maven-project'
+branch: 'master', git: 'https://github.com/akhare101/maven-project'
 }
 }
 stage ('validate code')
