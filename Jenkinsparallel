@@ -12,18 +12,20 @@ stage('parallel stage')
 {
 parallel
 {
-stage('test')
+stage('test'){
 steps {
 withMaven(maven : 'localmaven')
 {
 sh 'mvn test'
 }
 }
-stage('package stage')
+stage('package stage'){
 steps {
 withmaven(maven : 'localmaven')
 {
 sh 'mvn package'
+}
+}
 }
 }
 }
