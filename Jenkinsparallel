@@ -5,8 +5,7 @@ stages
 {
 stage('scm checout')
 {
-steps {
-git branch: 'master', url: 'https://github.com/akhare101/maven-project'
+git 'https://github.com/akhare101/maven-project'
 }
 }
 stage ('parallel stage')
@@ -25,7 +24,6 @@ steps{
 withmaven(maven : 'localmaven')
 {
 sh 'mvn package'
-}
 }
 }
 }
