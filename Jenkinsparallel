@@ -1,0 +1,33 @@
+pipeline
+{
+agent any
+stages
+{
+stage('scm checout')
+{
+steps {
+git branch: 'master', url: 'https://github.com/akhare101/maven-project'
+}
+}
+stage ('parallel stage')
+{
+parallel
+{
+stage('test')
+steps{
+withmaven(jdk: 'localjdk-1.8', 'maven : 'localmaven')
+{
+sh 'mvn test'
+}
+}
+stage('package')
+steps{
+withmaven(jdk: 'localjdk-1.8', 'maven : 'localmaven')
+{
+sh 'mvn package'
+}
+}
+}
+}
+}
+}
