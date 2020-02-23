@@ -5,7 +5,7 @@ stages
 {
 stage('scm checout')
 {
-git 'https://github.com/akhare101/maven-project'
+git branch: 'master', url: 'https://github.com/akhare101/maven-project'
 }
 }
 stage ('parallel stage')
