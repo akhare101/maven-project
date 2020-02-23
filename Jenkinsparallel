@@ -15,14 +15,14 @@ parallel
 {
 stage('test')
 steps{
-withmaven(jdk: 'localjdk-1.8', 'maven : 'localmaven')
+withmaven(jdk: 'localjdk', 'maven : 'localmaven')
 {
 sh 'mvn test'
 }
 }
 stage('package')
 steps{
-withmaven(jdk: 'localjdk-1.8', 'maven : 'localmaven')
+withmaven(jdk: 'localjdk', 'maven : 'localmaven')
 {
 sh 'mvn package'
 }
