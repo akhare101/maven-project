@@ -8,19 +8,19 @@ Steps{
 git branch: 'master', url: 'https://github.com/akhare101/maven-project'
 }
 }
-stage ('parallel stage')
+stage('parallel stage')
 {
 parallel
 {
 stage('test')
-steps{
+steps {
 withMaven(maven : 'localmaven')
 {
 sh 'mvn test'
 }
 }
 stage('package stage')
-steps{
+steps {
 withmaven(maven : 'localmaven')
 {
 sh 'mvn package'
